@@ -33,7 +33,7 @@ v `requirements.txt`:
 Příklad instalace ve Windows PowerShell:
 
 ```powershell
-git clone <URL>
+git clone https://github.com/JakubHeicl/SMDF.git
 cd SMDF
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
