@@ -34,7 +34,7 @@ Příklad instalace ve Windows PowerShell:
 
 ```powershell
 git clone <URL>
-cd simple_md_framework
+cd SMDF
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python -m pip install -r requirements.txt
