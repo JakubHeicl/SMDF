@@ -1,0 +1,49 @@
+{
+  "settings": {
+    "simulation": {
+      "units": "reduced",
+      "dt": 0.005,
+      "steps": 0,
+      "seed": 42
+    },
+    "initial": {
+      "source": "xyz",
+      "temperature": 0.0,
+      "path": "C:\\Users\\heiclj\\Matfyz\\Molekul\u00e1rn\u00ed dynamiky\\simple_md_framework\\tests\\3\\pair_pbc.xyz"
+    },
+    "system": {
+      "mass": 1.0,
+      "box": [
+        10.0,
+        10.0,
+        10.0
+      ]
+    },
+    "interaction": {
+      "type": "lennard_jones",
+      "epsilon": 1.0,
+      "sigma": 1.0,
+      "cutoff": 2.5,
+      "shift_energy": true
+    },
+    "integrator": {
+      "type": "velocity_verlet"
+    },
+    "thermostat": {
+      "type": "none"
+    },
+    "output": {
+      "directory": "C:\\Users\\heiclj\\Matfyz\\Molekul\u00e1rn\u00ed dynamiky\\simple_md_framework\\tests\\3\\results\\framework",
+      "thermo_stride": 1,
+      "trajectory_stride": 1
+    }
+  },
+  "N": 2,
+  "box": [
+    10.0,
+    10.0,
+    10.0
+  ],
+  "degrees_of_freedom": 6,
+  "units": "reduced"
+}

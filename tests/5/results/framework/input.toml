@@ -1,0 +1,28 @@
+[simulation]
+units = "reduced"
+dt = 0.01
+steps = 2000
+seed = 42
+
+[initial]
+source = "xyz"
+path = "oscillator.xyz"
+temperature = 0.0
+
+[system]
+mass = 1.0
+
+[interaction]
+type = "harmonic"
+k = 1.0
+
+[integrator]
+type = "velocity_verlet"
+
+[thermostat]
+type = "none"
+
+[output]
+directory = "results/framework"
+thermo_stride = 1
+trajectory_stride = 1

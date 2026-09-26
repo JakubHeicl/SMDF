@@ -1,0 +1,19 @@
+log lammps.log
+units lj
+atom_style atomic
+boundary p p p
+read_data initial.data
+pair_style lj/cut 2.5
+pair_coeff 1 1 1.0 1.0
+pair_modify shift yes tail no
+neighbor 0.3 bin
+neigh_modify every 1 delay 0 check yes
+timestep 0.005
+fix integrate all nve
+thermo 1
+thermo_style custom step time pe ke etotal temp
+thermo_modify norm no format float %.17g
+compute_modify thermo_temp extra/dof 0
+dump trajectory all custom 1 lammps.dump id x y z vx vy vz fx fy fz
+dump_modify trajectory sort id format float %.17g
+run 0

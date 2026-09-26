@@ -1,0 +1,22 @@
+log lammps.log
+units lj
+atom_style atomic
+boundary f f f
+read_data initial.data
+pair_style zero 2.5
+pair_coeff * *
+timestep 0.01
+variable fx atom -x
+variable fy atom -y
+variable fz atom -z
+variable harmonic_energy atom 0.5*(x*x+y*y+z*z)
+fix potential all addforce v_fx v_fy v_fz energy v_harmonic_energy
+fix_modify potential energy yes
+fix integrate all nve
+thermo 1
+thermo_style custom step time pe ke etotal temp
+thermo_modify norm no format float %.17g
+compute_modify thermo_temp extra/dof 0
+dump trajectory all custom 1 lammps.dump id x y z vx vy vz fx fy fz
+dump_modify trajectory sort id format float %.17g
+run 2000
